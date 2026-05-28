@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --verbiq-ink: #0b1020;
+  --verbiq-muted: #4b5563;
+  --verbiq-card: #ffffff;
+  --verbiq-stroke: #e2e8f0;
+  --verbiq-blue: #0f4c81;
+  --verbiq-teal: #1fb8aa;
+  --verbiq-orange: #ff8b3d;
+  --verbiq-sky: #e8f2ff;
+  --verbiq-mint: #e9fffb;
+  --verbiq-shadow: 0 20px 44px rgba(11, 16, 32, 0.1);
+}
+
+body {
+  font-family: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  color: var(--verbiq-ink);
+}
+
+h1,
+h2,
+h3,
+.verbiq-title {
+  font-family: "Fraunces", "Space Grotesk", serif;
+  letter-spacing: -0.02em;
+}
+
+.verbiq-page {
+  background: radial-gradient(circle at 10% 12%, var(--verbiq-sky), transparent 48%),
+    radial-gradient(circle at 90% 8%, #fff1e6, transparent 42%),
+    linear-gradient(180deg, #f7faff 0%, #f4f7ff 45%, #ffffff 100%);
+}
+
+.verbiq-card {
+  background: var(--verbiq-card);
+  border: 1px solid var(--verbiq-stroke);
+  box-shadow: var(--verbiq-shadow);
+  border-radius: 16px;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.verbiq-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 50px rgba(15, 23, 42, 0.12);
+}
+
+.verbiq-glass {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  border-color: rgba(148, 163, 184, 0.35);
+}
+
+.verbiq-btn {
+  background: linear-gradient(135deg, var(--verbiq-teal), var(--verbiq-orange));
+  color: #ffffff;
+  border: none;
+  box-shadow: 0 14px 28px rgba(31, 184, 170, 0.25);
+}
+
+.verbiq-btn:hover {
+  filter: brightness(1.02);
+}
+
+.verbiq-btn-outline {
+  border: 1px solid rgba(15, 76, 129, 0.35);
+  color: var(--verbiq-ink);
+  background: #ffffff;
+}
+
+.verbiq-badge {
+  background: rgba(31, 184, 170, 0.12);
+  color: #0b7f75;
+  border: 1px solid rgba(31, 184, 170, 0.25);
+}
+
+.verbiq-fade-up {
+  animation: verbiqFadeUp 600ms ease both;
+}
+
+@keyframes verbiqFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .verbiq-card,
+  .verbiq-fade-up {
+    transition: none;
+    animation: none;
+  }
+}
+
+.str-chat__channel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #3b82f6, #1f1147 55%, #0d0b2a 100%);
+  height: 100%;
+}
+
+.str-chat__container {
+  max-width: 1200px;
+  width: 100%;
+  height: 80% !important;
+  margin: 0 auto !important;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.str-chat__list {
+  background-color: #ffffff;
+  padding: 12px;
+}
+
+.str-chat__list-notifications {
+  display: none;
+}
+
+.str-chat__message-input {
+  border-top: 1px solid #ddd;
+}
